@@ -30,7 +30,7 @@
     <link href="dashboard.css" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-dark">
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-1 shadow">
         <a class="navbar-brand col-md-3 col-lg-2 me-0 mx-3 px-2 text-warning" href="#">Zapateria ISA</a>
         <div class="navbar-nav">
@@ -56,8 +56,8 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla Uno</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Tipos de Roles</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
                                     <a href="#" class="btn btn-primary">Visualizar</a>
                                 </div>
@@ -67,8 +67,8 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla Dos</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Tipos de Citas</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
                                     <a href="#" class="btn btn-primary">Visualizar</a>
                                 </div>
@@ -78,8 +78,8 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla Tres</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Productos</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
                                     <a href="#" class="btn btn-primary">Visualizar</a>
                                 </div>
@@ -91,8 +91,8 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla cuatro</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Citas</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
                                     <a href="#" class="btn btn-primary">Visualizar</a>
                                 </div>
@@ -102,8 +102,8 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla cinco</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Carrito</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
                                     <a href="#" class="btn btn-primary">Visualizar</a>
                                 </div>
@@ -113,52 +113,18 @@
                     <div class="col-sm-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Tabla seis</h5>
-                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                <h5 class="card-title text-center">Usuarios</h5>
+                                <p class="card-text text-center">With supporting text below as a natural lead-in to additional content.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{route('usuarios')}}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <h1 class="text-warning">Visualizacion de Usuarios</h1>
-                <div class="table-responsive py-3">
-                    <table class="table table-striped table-sm text-white">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                                <th scope="col">Header</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="text-white text-center">
-                                <td>1,001</td>
-                                <td>random</td>
-                                <td>data</td>
-                                <td>placeholder</td>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
-                                <td>text</td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </div>
     </div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
