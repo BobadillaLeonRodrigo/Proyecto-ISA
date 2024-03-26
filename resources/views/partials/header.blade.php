@@ -3,7 +3,7 @@
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
+<title>Zapateria ISA</title>
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -27,12 +27,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Registrate</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route ('login')}}" tabindex="-1" aria-disabled="true">Iniciar Sesión</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             ¿Quienes Somos?
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Acerca de</a></li>
+                            <li><a class="dropdown-item" href="#">Acerca de ISA</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
