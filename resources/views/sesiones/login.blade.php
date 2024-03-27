@@ -21,7 +21,7 @@
         <div class="container-fluid container">
             <div class="container-fluid">
                 <a class="navbar-brand text-white" href="#">
-                    <img src="#" alt="ANUIES" height="60px" class="d-inline-block align-text-top">
+                    <img src="#" alt="..." height="60px" class="d-inline-block align-text-top">
                 </a>
             </div>
             <button class="navbar-toggler mt-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,12 +52,12 @@
                     @csrf
                     <div class="mb-4">
                         <label for="email" class="form-label">&nbsp;<i class="fa-solid fa-envelope"></i> Correo Electrónico:</label>
-                        <input type="email" class="form-control" name="email" placeholder="Correo" required>
+                        <input type="email" class="form-control" name="Email" placeholder="Correo" required>
                     </div>
 
                     <div class="mb-4">
-                        <label for="pass" class="form-label">&nbsp;<i class="fa-sharp fa-solid fa-key"></i>Contraseña:</label>
-                        <input type="password" class="form-control" name="pass" placeholder="Contraseña" required>
+                        <label for="pass" class="form-label">&nbsp;<i class="fa-sharp fa-solid fa-key"></i> Contraseña:</label>
+                        <input type="password" class="form-control" name="Contraseña" placeholder="Contraseña" required>
                     </div>
 
                     <br>

@@ -130,81 +130,42 @@
                         </div>
                     </div>
                 </div>
-                <!-- Añadir formularios para la creación -->
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
+                        <form class="row g-1 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
                             method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            <div class="col-sm-4 text-center">
-                                <label for="inputEmail4" class="form-label">Nombre</label>
-                                <input type="text" class="form-control" name="Nombre_Usuario">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="inputPassword4" class="form-label">Apellido Paterno</label>
-                                <input type="text" class="form-control" id="inputPassword4"
-                                    name="Apellido_Paterno">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="inputPassword4" class="form-label">Apellido Materno</label>
-                                <input type="text" class="form-control" id="inputPassword4"
-                                    name="Apellido_Materno">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="inputAddress" class="form-label">Correo Electronico</label>
-                                <input type="email" class="form-control" id="inputAddress"
-                                    placeholder="example@gmail.com" name="Email">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="inputAddress2" class="form-label">Contraseña</label>
-                                <input type="password" class="form-control" id="inputAddress2" name="Contraseña">
-                            </div>
-                            <div class="col-sm-4 text-center">
-                                <label for="inputCity" class="form-label">Tipo de Rol</label>
-                                <select type="text" class="form-control" id="inputCity" name="ID_Role">
-                                    <option value="1">Administrador</option>
-                                    <option value="2">Usuarios</option>
-                                </select>
+                            <div class="col-sm-6 offset-sm-3 text-center">
+                                <!-- Utiliza offset-sm-3 para centrar en pantallas grandes -->
+                                <label for="inputEmail4" class="form-label">Nombre Del Role</label>
+                                <input type="text" class="form-control" name="Nombre_Role">
                             </div>
                             <div class="col-sm-12 py-2">
-                                <button type="submit" class="btn btn-success">Crear Usuario</button>
+                                <button type="submit" class="btn btn-success">Crear Tipo de Roles</button>
                             </div>
                         </form>
                     </div>
                 </div>
-                <h1 class="text-warning">Visualización de Usuarios</h1>
+                <h1 class="text-warning">Visualización de Tipo de Roles</h1>
                 <div class="table-responsive py-3">
                     <table class="table table-striped table-sm text-white">
                         <thead class="text-center">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido Paterno</th>
-                                <th scope="col">Apellido Materno</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Nombre del Rol</th>
+                                <th scope="col">Nombre_Role</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
-                        <?php
-                        $i = 1;
-                        ?>
                         <tbody>
-                            @foreach ($Usuarios as $U)
+                            @foreach ($TipoRol as $TR)
                                 <tr class="text-white text-center">
-                                    <td>{{ $i++ }}</td>
-                                    <td>{{ $U->Nombre_Usuario }}</td>
-                                    <td>{{ $U->Apellido_Paterno }}</td>
-                                    <td>{{ $U->Apellido_Materno }}</td>
-                                    <td>{{ $U->Email }}</td>
-                                    <td>{{ $U->Nombre_Role }}</td>
+                                    <td>{{ $TR->ID_Role }}</td>
+                                    <td>{{ $TR->Nombre_Role }}</td>
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminar', ['id' => $U->ID_Usuario]) }}"><button
-                                                    type="button" class="btn btn-danger">Eliminar</button>
-                                                <a href="{{ route('editar', ['id' => $U->ID_Usuario]) }}"><button
-                                                        type="button" class="btn btn-success">Editar</button>
+                                            <button type="button" class="btn btn-danger">Eliminar</button>
+                                            <button type="button" class="btn btn-success">Editar</button>
                                         </div>
                                     </td>
                                 </tr>
