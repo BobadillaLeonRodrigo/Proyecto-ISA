@@ -29,8 +29,8 @@ class Login extends Controller
                 ->get();
             //dd($request->all());
 
-            if ($consulta[0]->ID_Role == 3 && count($area) == 0) {
-                return redirect('inicio');
+            if ($consulta[0]->ID_Role == 1) {
+                return redirect('dashboard');
             } else {
                 $request->session()->put('session_ID_Usuario', $consulta[0]->ID_Usuario);
                 $request->session()->put('session_name', $consulta[0]->nombre . ' ' . $consulta[0]->app . ' ' . $consulta[0]->apm);
@@ -43,7 +43,7 @@ class Login extends Controller
                 $request->session()->put('session_tipo', $consulta[0]->ID_Role);
                 $request->session()->put('session_foto', $consulta[0]->foto);
 
-                return redirect('inicios');
+                return redirect('dashboard');
             }
         }
     }
