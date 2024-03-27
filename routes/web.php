@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ControllerProducto;
+use App\Http\Controllers\ControllerTipo_Citas;
+use App\Http\Controllers\ControllerTipo_Roles;
 use App\Http\Controllers\ControllerUsuario;
 use App\Http\Controllers\Login;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::name('inicio')->get('/', function () {
     return view('home');
 });
@@ -22,18 +26,36 @@ Route::get('dashboard', function () {
     return view('admin/dashboard');
 });
 
-Route::name('usuarios')->get('usuarios',[ControllerUsuario::class,'usuarios']);
+//Rutas para la navegacion del panel administrativo
+    //Rutas de Usuarios
+Route::name('usuarios')->get('usuarios', [ControllerUsuario::class, 'usuarios']);
+    //Rutas de CRUD Usuario
+        //Agregar Usuario
+Route::name('agregar')->post('agregar', [ControllerUsuario::class, 'agregar']);
+        //Eliminar Usuario
+Route::name('eliminar')->delete('eliminar/{id}', [ControllerUsuario::class, 'eliminar']);
+Route::name('eliminar')->get('eliminar/{id}', [ControllerUsuario::class, 'eliminar']);
+        //Guardar Usuario
+Route::name('editar')->get('editar/{id}',[ControllerUsuario::class, 'editar']);
+Route::name('salvar')->put('salvar/{id}',[ControllerUsuario::class, 'salvar']);
+//------------------------------------------------------------------------------------------------
+    //Rutas de TipoRoles
+Route::name('tiporoles')->get('tiporoles', [ControllerTipo_Roles::class, 'tiporoles']);
 
-Route::name('agregar')->post('agregar',[ControllerUsuario::class, 'agregar']);
+//------------------------------------------------------------------------------------------------
+    //Rutas de TipoCitas
+Route::name('tipocitas')->get('tipocitas', [ControllerTipo_Citas::class, 'tipocitas']);
 
-Route::get('users', function () {
-    return view('admin/users/index');
-});
+//------------------------------------------------------------------------------------------------
+    //Rutas de Producto
+Route::name('producto')->get('producto', [ControllerProducto::class, 'producto']);
+//Route::name('citas')->get('citas',[::class,'citas']);
+//Route::name('carrito')->get('carrito',[::class,'carrito']);
+
+
+//Rutas de Login
 Route::name('login')->get('login', function () {
     return view('sesiones/login');
 });
-
-
-
 Route::name('valida')->post('valida', [Login::class, 'valida']);
 Route::name('logout')->get('logout', [Login::class, 'logout']);

@@ -16,7 +16,7 @@ class Usuarios extends Model
         'Apellido_Paterno',
         'Apellido_Materno',
         'Email',
-        'Constraseña',
+        'Contraseña',
         'ID_Role',
     ];
 }
