@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -131,54 +131,55 @@
                     </div>
                 </div>
                 <!-- Añadir formularios para la creación -->
-                <div class="py-2 text-warning">
-                    <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
-                        method="post" enctype="multipart/form-data">
-                        {{ csrf_field() }}
-                        <div class="col-sm-4 text-center">
-                            <label for="inputEmail4" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" name="Nombre_Usuario">
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <label for="inputPassword4" class="form-label">Apellido Paterno</label>
-                            <input type="text" class="form-control" id="inputPassword4" name="Apellido_Paterno">
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <label for="inputPassword4" class="form-label">Apellido Materno</label>
-                            <input type="text" class="form-control" id="inputPassword4" name="Apellido_Materno">
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <label for="inputAddress" class="form-label">Correo Electronico</label>
-                            <input type="email" class="form-control" id="inputAddress"
-                                placeholder="example@gmail.com" name="Email">
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <label for="inputAddress2" class="form-label">Contraseña</label>
-                            <input type="password" class="form-control" id="inputAddress2" name="Contraseña">
-                        </div>
-                        <div class="col-sm-4 text-center">
-                            <label for="inputCity" class="form-label">Tipo de Rol</label>
-                            <select type="text" class="form-control" id="inputCity" name="ID_Role">
-                                <option value="1">Administrador</option>
-                                <option value="2">Usuarios</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-12 py-2">
-                            <button type="submit" class="btn btn-success">Crear Usuario</button>
-                        </div>
-                    </form>
+                <div class="container">
+                    <div class="py-2 text-warning">
+                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
+                            method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <div class="col-sm-4 text-center">
+                                <label for="inputEmail4" class="form-label">Nombre del Producto</label>
+                                <input type="text" class="form-control" name="Nombre_Producto">
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputPassword4" class="form-label">Descripción</label>
+                                <input type="text" class="form-control" id="inputPassword4" name="Descripcion">
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputPassword4" class="form-label">Precio</label>
+                                <input type="number" class="form-control" id="inputPassword4" name="Precio">
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputAddress" class="form-label">Talla</label>
+                                <input type="text" class="form-control" id="inputAddress" name="Talla">
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputAddress2" class="form-label">Color</label>
+                                <input type="text" class="form-control" id="inputAddress2" name="Color">
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputCity" class="form-label">Imagen</label>
+                                <input type="file" accept="image/jpeg, image/png" class="form-control"
+                                    id="inputAddress2" name="Imagen">
+                                </select>
+                            </div>
+                            <div class="col-sm-12 py-2">
+                                <button type="submit" class="btn btn-success">Crear Producto</button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <h1 class="text-warning">Visualización de Usuarios</h1>
+                <h1 class="text-warning">Visualización de Productos</h1>
                 <div class="table-responsive py-3">
                     <table class="table table-striped table-sm text-white">
                         <thead class="text-center">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido Paterno</th>
-                                <th scope="col">Apellido Materno</th>
-                                <th scope="col">Email</th>
-                                <th scope="col">Nombre del Rol</th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Descripcion</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Talla</th>
+                                <th scope="col">Color</th>
+                                <th scope="col">Imagen</th>
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>

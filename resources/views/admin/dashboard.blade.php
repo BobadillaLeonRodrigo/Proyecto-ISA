@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="#" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
