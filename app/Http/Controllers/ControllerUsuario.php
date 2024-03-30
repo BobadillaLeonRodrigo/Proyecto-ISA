@@ -5,14 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-
 class ControllerUsuario extends Controller
 {
-    // public function inicio(){
-    //     $Usuarios = Usuarios::all();
-    //     return view ('usuarios.inicio', compact('Usuarios'));
-    // }
-
     public function usuarios()
     {
         $Usuarios =  \DB::select('SELECT usuarios.ID_Usuario,usuarios.Nombre_Usuario,usuarios.Apellido_Paterno,usuarios.Apellido_Materno,usuarios.Email,usuarios.ID_Role, tipo_roles.ID_Role, tipo_roles.Nombre_Role
