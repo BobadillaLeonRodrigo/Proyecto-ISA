@@ -86,7 +86,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('producto')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('producto') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('citas') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('carrito') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -130,53 +130,24 @@
                         </div>
                     </div>
                 </div>
+                <!-- Añadir formularios para la creación -->
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-1 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
-                            method="post" enctype="multipart/form-data">
+                        <form class="row g-2 border border-warning border-3 rounded-top"
+                            action="{{ route('salvarTR', ['id' => $tiporole->ID_Role]) }}" method="post"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="col-sm-6 offset-sm-3 text-center">
-                                <!-- Utiliza offset-sm-3 para centrar en pantallas grandes -->
-                                <label for="inputEmail4" class="form-label">Nombre Del Role</label>
-                                <input type="text" class="form-control" name="Nombre_Role">
+                                <label for="inputEmail4" class="form-label">Nombre del Role</label>
+                                <input value="{{ $tiporole->Nombre_Role }}" type="text" class="form-control"
+                                    name="Nombre_Role">
                             </div>
                             <div class="col-sm-12 py-2">
-                                <button type="submit" class="btn btn-success">Crear Tipo de Roles</button>
+                                <button type="submit" class="btn btn-success">Editar Tipo de Role</button>
                             </div>
                         </form>
                     </div>
-                </div>
-                <h1 class="text-warning">Visualización de Tipo de Roles</h1>
-                <div class="table-responsive py-3">
-                    <table class="table table-striped table-sm text-white">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre_Role</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <?php
-                        $i = 1;
-                        ?>
-                        <tbody>
-                            @foreach ($TipoRol as $TR)
-                                <tr class="text-white text-center">
-                                    <td>{{ $i++ }}</td>
-                                    <td>{{ $TR->Nombre_Role }}</td>
-                                    <td>
-                                        <div class="btn-group" role="group"
-                                            aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminar', ['id' => $TR->ID_Role]) }}"><button
-                                                    type="button" class="btn btn-danger">Eliminar</button>
-                                                <a href="{{ route('editarTR', ['id' => $TR->ID_Role]) }}"><button
-                                                        type="button" class="btn btn-success">Editar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </div>

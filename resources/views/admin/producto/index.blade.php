@@ -183,10 +183,14 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
+                        <?php
+                        $i = 1;
+                        ?>
+                        <tbody>
                         <tbody>
                             @foreach ($Productos as $P)
                                 <tr class="text-white text-center">
-                                    <td>{{ $P->ID_Producto }}</td>
+                                    <td>{{ $i++ }}</td>
                                     <td>{{ $P->Nombre_Producto }}</td>
                                     <td>{{ $P->Descripcion }}</td>
                                     <td>{{ $P->Precio }}</td>
@@ -196,8 +200,10 @@
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <button type="button" class="btn btn-danger">Eliminar</button>
-                                            <button type="button" class="btn btn-success">Editar</button>
+                                            <a href="{{ route('eliminar', ['id' => $P->ID_Producto]) }}"><button
+                                                    type="button" class="btn btn-danger">Eliminar</button>
+                                                <a href="{{ route('editarP', ['id' => $P->ID_Producto]) }}"><button
+                                                        type="button" class="btn btn-success">Editar</button>
                                         </div>
                                     </td>
                                 </tr>

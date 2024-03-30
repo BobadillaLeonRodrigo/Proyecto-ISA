@@ -156,16 +156,22 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
+                        <?php
+                        $i = 1;
+                        ?>
+                        <tbody>
                         <tbody>
                             @foreach ($TipoCitas as $TC)
                                 <tr class="text-white text-center">
-                                    <td>{{ $TC->ID_TipoCitas }}</td>
+                                    <td>{{ $i++ }}</td>
                                     <td>{{ $TC->Descripcion }}</td>
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <button type="button" class="btn btn-danger">Eliminar</button>
-                                            <button type="button" class="btn btn-success">Editar</button>
+                                            <a href="{{ route('eliminar', ['id' => $TC->ID_TipoCitas]) }}"><button
+                                                    type="button" class="btn btn-danger">Eliminar</button>
+                                                <a href="{{ route('editarTC', ['id' => $TC->ID_TipoCitas]) }}"><button
+                                                        type="button" class="btn btn-success">Editar</button>
                                         </div>
                                     </td>
                                 </tr>
