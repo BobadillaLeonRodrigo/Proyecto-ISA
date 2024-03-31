@@ -134,20 +134,24 @@
                 <div class="container">
                     <div class="py-2 text-warning">
                         <form class="row g-2 border border-warning border-3 rounded-top"
-                            action="{{ route('agregarCa') }}" method="post" enctype="multipart/form-data">
+                            action="{{ route('salvarCa', ['id' => $carrito->ID_Carrito]) }}" method="post"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="col-sm-4 text-center">
                                 <label for="inputEmail4" class="form-label">Estado</label>
-                                <input type="text" class="form-control" name="Estado">
+                                <input value="{{ $carrito->Estado }}" type="text" class="form-control"
+                                    name="Estado">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputPassword4" class="form-label">Fecha y Hora</label>
-                                <input type="datetime-local" class="form-control" id="inputPassword4"
-                                    name="FechaHora">
+                                <input value="{{ $carrito->FechaHora }}" type="datetime-local" class="form-control"
+                                    id="inputPassword4" name="FechaHora">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputCity" class="form-label">Usuario</label>
-                                <select type="text" class="form-control" id="inputCity" name="ID_Usuario">
+                                <select value="{{ $carrito->ID_Usuario }}" type="text" class="form-control"
+                                    id="inputCity" name="ID_Usuario">
                                     <option value="1">Rodrigo</option>
                                     <option value="2">Abi</option>
                                 </select>
@@ -157,39 +161,6 @@
                             </div>
                         </form>
                     </div>
-                </div>
-                <h1 class="text-warning">Visualización del Carrito</h1>
-                <div class="table-responsive py-3">
-                    <table class="table table-striped table-sm text-white">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Estado</th>
-                                <th scope="col">Fecha y Hora</th>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($Carrito as $C)
-                                <tr class="text-white text-center">
-                                    <td>{{ $C->ID_Carrito }}</td>
-                                    <td>{{ $C->Estado }}</td>
-                                    <td>{{ $C->FechaHora }}</td>
-                                    <td>{{ $C->Nombre_Usuario }}</td>
-                                    <td>
-                                        <div class="btn-group" role="group"
-                                        aria-label="Basic mixed styles example">
-                                        <a href="{{ route('eliminarCa', ['id' => $C->ID_Carrito]) }}"><button
-                                                type="button" class="btn btn-danger">Eliminar</button>
-                                            <a href="{{ route('editarCa', ['id' => $C->ID_Carrito]) }}"><button
-                                                    type="button" class="btn btn-success">Editar</button>
-                                    </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </div>
