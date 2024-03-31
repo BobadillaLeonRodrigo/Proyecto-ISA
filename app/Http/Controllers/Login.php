@@ -22,7 +22,7 @@ class Login extends Controller
             ->where('Contraseña', '=', $contraseña)
             ->get();
         if (count($consulta) == 0 or $consulta[0]->activo == '0') {
-            return redirect('login');
+            return redirect('dashboard');
         } else {
 
             $area = Tipo_Roles::where('ID_Role', '=', $consulta[0]->ID_Usuario)
