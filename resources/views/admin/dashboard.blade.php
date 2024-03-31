@@ -36,7 +36,7 @@
         <a class="navbar-brand col-md-3 col-lg-2 me-0 mx-3 px-2 text-warning" href="#">Zapateria ISA</a>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Cerrar Sesion</a>
+                <a class="nav-link px-3" href="{{ route('logout') }}">Cerrar Sesion</a>
             </div>
         </div>
     </header>
@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('citas') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('carrito') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>

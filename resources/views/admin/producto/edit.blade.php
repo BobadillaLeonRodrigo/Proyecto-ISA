@@ -36,7 +36,7 @@
         <a class="navbar-brand col-md-3 col-lg-2 me-0 mx-3 px-2 text-warning" href="#">Zapateria ISA</a>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Cerrar Sesion</a>
+                <a class="nav-link px-3" href="{{ route('logout') }}">Cerrar Sesion</a>
             </div>
         </div>
     </header>
@@ -165,7 +165,8 @@
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputAddress2" class="form-label">Color</label>
-                                <input value="{{$productos->Color}}" type="text" class="form-control" id="inputAddress2" name="Color">
+                                <input value="{{ $productos->Color }}" type="text" class="form-control"
+                                    id="inputAddress2" name="Color">
                             </div>
                             <div class="col-sm-12 py-2">
                                 <button type="submit" class="btn btn-success">Editar Producto</button>

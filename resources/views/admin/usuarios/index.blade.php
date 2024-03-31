@@ -36,7 +36,7 @@
         <a class="navbar-brand col-md-3 col-lg-2 me-0 mx-3 px-2 text-warning" href="#">Zapateria ISA</a>
         <div class="navbar-nav">
             <div class="nav-item text-nowrap">
-                <a class="nav-link px-3" href="#">Cerrar Sesion</a>
+                <a class="nav-link px-3" href="{{ route('logout') }}">Cerrar Sesion</a>
             </div>
         </div>
     </header>

@@ -27,7 +27,7 @@
             <div class="col-md-6"><!-- Columna para el formulario -->
                 <div class="text-center"><!-- Div para centrar el contenido -->
                     <h2 class="fw-bold pb-3">Registro</h2><!-- Encabezado del formulario -->
-                    <form action="{{ route('registro') }}" method="POST"><!-- Formulario -->
+                    <form action="{{ route('registro_usuarios') }}" method="POST"><!-- Formulario -->
                         @csrf
                         <div class="row mb-4"><!-- Fila para los campos -->
                             <div class="col-md-4"><!-- Columna para el nombre de usuario -->
