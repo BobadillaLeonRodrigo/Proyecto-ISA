@@ -54,10 +54,10 @@ Route::name('salvar')->put('salvar/{id}', [ControllerUsuario::class, 'salvar']);
 Route::name('tiporoles')->get('tiporoles', [ControllerTipo_Roles::class, 'tiporoles']);
 //Rutas de CRUD TipoRoles
 //Agregar TipoRoles
-Route::name('agregar')->post('agregar', [ControllerTipo_Roles::class, 'agregar']);
+Route::name('agregarTR')->post('agregarTR', [ControllerTipo_Roles::class, 'agregarTR']);
 //Eliminar TipoRoles
-Route::name('eliminar')->delete('eliminar/{id}', [ControllerTipo_Roles::class, 'eliminar']);
-Route::name('eliminar')->get('eliminar/{id}', [ControllerTipo_Roles::class, 'eliminar']);
+Route::name('eliminarTR')->delete('eliminarTR/{id}', [ControllerTipo_Roles::class, 'eliminarTR']);
+Route::name('eliminarTR')->get('eliminarTR/{id}', [ControllerTipo_Roles::class, 'eliminarTR']);
 //Guardar TipoRoles
 Route::name('editarTR')->get('editarTR/{id}', [ControllerTipo_Roles::class, 'editarTR']);
 Route::name('salvarTR')->put('salvarTR/{id}', [ControllerTipo_Roles::class, 'salvarTR']);
@@ -67,10 +67,10 @@ Route::name('salvarTR')->put('salvarTR/{id}', [ControllerTipo_Roles::class, 'sal
 Route::name('tipocitas')->get('tipocitas', [ControllerTipo_Citas::class, 'tipocitas']);
 //Rutas de CRUD TipoCitas
 //Agregar TipoCitas
-Route::name('agregar')->post('agregar', [ControllerTipo_Citas::class, 'agregar']);
+Route::name('agregarTC')->post('agregarTC', [ControllerTipo_Citas::class, 'agregarTC']);
 //Eliminar TipoCitas
-Route::name('eliminar')->delete('eliminar/{id}', [ControllerTipo_Citas::class, 'eliminar']);
-Route::name('eliminar')->get('eliminar/{id}', [ControllerTipo_Citas::class, 'eliminar']);
+Route::name('eliminarTC')->delete('eliminarTC/{id}', [ControllerTipo_Citas::class, 'eliminarTC']);
+Route::name('eliminarTC')->get('eliminarTC/{id}', [ControllerTipo_Citas::class, 'eliminarTC']);
 //Guardar TipoCitas
 Route::name('editarTC')->get('editarTC/{id}', [ControllerTipo_Citas::class, 'editarTC']);
 Route::name('salvarTC')->put('salvarTC/{id}', [ControllerTipo_Citas::class, 'salvarTC']);
@@ -80,10 +80,10 @@ Route::name('salvarTC')->put('salvarTC/{id}', [ControllerTipo_Citas::class, 'sal
 Route::name('producto')->get('producto', [ControllerProducto::class, 'producto']);
 //Rutas de CRUD Producto
 //Agregar Producto
-Route::name('agregar')->post('agregar', [ControllerProducto::class, 'agregar']);
+Route::name('agregarP')->post('agregarP', [ControllerProducto::class, 'agregarP']);
 //Eliminar Producto
-Route::name('eliminar')->delete('eliminar/{id}', [ControllerProducto::class, 'eliminar']);
-Route::name('eliminar')->get('eliminar/{id}', [ControllerProducto::class, 'eliminar']);
+Route::name('eliminarP')->delete('eliminarP/{id}', [ControllerProducto::class, 'eliminarP']);
+Route::name('eliminarP')->get('eliminarP/{id}', [ControllerProducto::class, 'eliminarP']);
 //Guardar Producto
 Route::name('editarP')->get('editarP/{id}', [ControllerProducto::class, 'editarP']);
 Route::name('salvarP')->put('salvarP/{id}', [ControllerProducto::class, 'salvarP']);
