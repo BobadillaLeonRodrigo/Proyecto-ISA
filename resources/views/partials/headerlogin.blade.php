@@ -29,7 +29,8 @@
                         <a class="nav-link" href="#">Catalogo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Registrate</a>
+                        <a class="nav-link" href="{{ route('registro') }}" tabindex="-1"
+                            aria-disabled="true">Registrate</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('login') }}" tabindex="-1" aria-disabled="true">Iniciar

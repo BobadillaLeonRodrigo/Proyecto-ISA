@@ -86,7 +86,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route ('producto')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('producto') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('citas') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('carrito') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -133,8 +133,8 @@
                 <!-- Añadir formularios para la creación -->
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
-                            method="post" enctype="multipart/form-data">
+                        <form class="row g-2 border border-warning border-3 rounded-top"
+                            action="{{ route('agregarU') }}" method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="col-sm-4 text-center">
                                 <label for="inputEmail4" class="form-label">Nombre</label>
@@ -186,13 +186,10 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
-                        <?php
-                        $i = 1;
-                        ?>
                         <tbody>
                             @foreach ($Usuarios as $U)
                                 <tr class="text-white text-center">
-                                    <td>{{ $i++ }}</td>
+                                    <td>{{ $U->ID_Usuario }}</td>
                                     <td>{{ $U->Nombre_Usuario }}</td>
                                     <td>{{ $U->Apellido_Paterno }}</td>
                                     <td>{{ $U->Apellido_Materno }}</td>
@@ -201,7 +198,7 @@
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminar', ['id' => $U->ID_Usuario]) }}"><button
+                                            <a href="{{ route('eliminarU', ['id' => $U->ID_Usuario]) }}"><button
                                                     type="button" class="btn btn-danger">Eliminar</button>
                                                 <a href="{{ route('editar', ['id' => $U->ID_Usuario]) }}"><button
                                                         type="button" class="btn btn-success">Editar</button>

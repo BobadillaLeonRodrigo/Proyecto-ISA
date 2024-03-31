@@ -153,14 +153,14 @@
                                 <input type="text" class="form-control" id="inputAddress" name="Talla">
                             </div>
                             <div class="col-sm-4 text-center">
-                                <label for="inputAddress2" class="form-label">Color</label>
-                                <input type="text" class="form-control" id="inputAddress2" name="Color">
-                            </div>
-                            <div class="col-sm-4 text-center">
                                 <label for="inputCity" class="form-label">Imagen</label>
-                                <input type="file" accept="image/jpeg, image/png" class="form-control"
+                                <input type="file" class="form-control"
                                     id="inputAddress2" name="Imagen">
                                 </select>
+                            </div>
+                            <div class="col-sm-4 text-center">
+                                <label for="inputAddress2" class="form-label">Color</label>
+                                <input type="text" class="form-control" id="inputAddress2" name="Color">
                             </div>
                             <div class="col-sm-12 py-2">
                                 <button type="submit" class="btn btn-success">Crear Producto</button>
