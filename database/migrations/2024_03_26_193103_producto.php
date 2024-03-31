@@ -20,7 +20,7 @@ class Producto extends Migration
             $table->double('Precio');
             $table->double('Talla');
             $table->string('Color',50);
-            $table->string('Imagen', 255);
+            $table->text('Imagen');
             $table->timestamps();
         });
     }
