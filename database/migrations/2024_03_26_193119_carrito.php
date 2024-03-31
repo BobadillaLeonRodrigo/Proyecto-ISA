@@ -16,7 +16,7 @@ class Carrito extends Migration
         schema::create('Carrito', function (Blueprint $table){
             $table->increments('ID_Carrito');
             $table->string('Estado', 50);
-            $table->date('FechaHora', 50);
+            $table->timestamp('FechaHora', 50);
             $table->integer('ID_Usuario')->unsigned();
             $table->timestamps();
         });
