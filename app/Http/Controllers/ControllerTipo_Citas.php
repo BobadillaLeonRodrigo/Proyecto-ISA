@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tipo_Citas;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerTipo_Citas extends Controller
 {
@@ -12,7 +13,7 @@ class ControllerTipo_Citas extends Controller
         $TipoCitas = Tipo_Citas::all();
         return view('admin.tipocitas.index', compact('TipoCitas'));
     }
-    public function agregar(Request $request)
+    public function agregarTC(Request $request)
     {
         //dd($request->all());
         Tipo_Citas::create(array(
@@ -22,9 +23,13 @@ class ControllerTipo_Citas extends Controller
         return redirect()->route("tipocitas");
     }
 
-    public function eliminar(Tipo_Citas $id)
+    public function eliminarTC(Tipo_Citas $id)
     {
         $id->delete();
+        // Reorganizar las ID
+        DB::statement('SET @count = 0');
+        DB::statement('UPDATE Tipo_Citas SET ID_TipoCitas = @count:= @count + 1');
+        DB::statement('ALTER TABLE Tipo_Citas AUTO_INCREMENT = 1');
         return redirect()->route('tipocitas');
     }
 

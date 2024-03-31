@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tipo_Roles;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerTipo_Roles extends Controller
 {
@@ -13,7 +14,7 @@ class ControllerTipo_Roles extends Controller
         return view('admin.tiporoles.index', compact('TipoRol'));
     }
 
-    public function agregar(Request $request)
+    public function agregarTR(Request $request)
     {
         //dd($request->all());
         Tipo_Roles::create(array(
@@ -23,9 +24,13 @@ class ControllerTipo_Roles extends Controller
         return redirect()->route("tiporoles");
     }
 
-    public function eliminar(Tipo_Roles $id)
+    public function eliminarTR(Tipo_Roles $id)
     {
         $id->delete();
+        // Reorganizar las ID
+        DB::statement('SET @count = 0');
+        DB::statement('UPDATE Tipo_Roles SET ID_Role = @count:= @count + 1');
+        DB::statement('ALTER TABLE Tipo_Roles AUTO_INCREMENT = 1');
         return redirect()->route('tiporoles');
     }
 

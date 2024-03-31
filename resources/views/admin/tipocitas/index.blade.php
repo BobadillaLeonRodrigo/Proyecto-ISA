@@ -132,7 +132,7 @@
                 </div>
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-1 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
+                        <form class="row g-1 border border-warning border-3 rounded-top" action="{{ route('agregarTC') }}"
                             method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="col-sm-6 offset-sm-3 text-center">
@@ -156,19 +156,16 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
-                        <?php
-                        $i = 1;
-                        ?>
                         <tbody>
                         <tbody>
                             @foreach ($TipoCitas as $TC)
                                 <tr class="text-white text-center">
-                                    <td>{{ $i++ }}</td>
+                                    <td>{{ $TC->ID_TipoCitas }}</td>
                                     <td>{{ $TC->Descripcion }}</td>
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminar', ['id' => $TC->ID_TipoCitas]) }}"><button
+                                            <a href="{{ route('eliminarTC', ['id' => $TC->ID_TipoCitas]) }}"><button
                                                     type="button" class="btn btn-danger">Eliminar</button>
                                                 <a href="{{ route('editarTC', ['id' => $TC->ID_TipoCitas]) }}"><button
                                                         type="button" class="btn btn-success">Editar</button>

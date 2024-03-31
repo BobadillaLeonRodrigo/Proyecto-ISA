@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ControllerProducto extends Controller
 {
@@ -12,7 +13,7 @@ class ControllerProducto extends Controller
         $Productos = Producto::all();
         return view('admin.producto.index', compact('Productos'));
     }
-    public function agregar(Request $request)
+    public function agregarP(Request $request)
     {
         dd($request->all());
         Producto::create(array(
@@ -27,9 +28,13 @@ class ControllerProducto extends Controller
         return redirect()->route("producto");
     }
 
-    public function eliminar(Producto $id)
+    public function eliminarP(Producto $id)
     {
         $id->delete();
+        // Reorganizar las ID
+        DB::statement('SET @count = 0');
+        DB::statement('UPDATE Producto SET ID_Producto = @count:= @count + 1');
+        DB::statement('ALTER TABLE Producto AUTO_INCREMENT = 1');
         return redirect()->route('producto');
     }
 

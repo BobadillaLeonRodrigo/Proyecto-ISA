@@ -133,7 +133,7 @@
                 <!-- Añadir formularios para la creación -->
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregar') }}"
+                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregarP') }}"
                             method="post" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="col-sm-4 text-center">
@@ -183,14 +183,11 @@
                                 <th scope="col">Acciones</th>
                             </tr>
                         </thead>
-                        <?php
-                        $i = 1;
-                        ?>
                         <tbody>
                         <tbody>
                             @foreach ($Productos as $P)
                                 <tr class="text-white text-center">
-                                    <td>{{ $i++ }}</td>
+                                    <td>{{ $P->ID_Producto }}</td>
                                     <td>{{ $P->Nombre_Producto }}</td>
                                     <td>{{ $P->Descripcion }}</td>
                                     <td>{{ $P->Precio }}</td>
@@ -200,7 +197,7 @@
                                     <td>
                                         <div class="btn-group" role="group"
                                             aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminar', ['id' => $P->ID_Producto]) }}"><button
+                                            <a href="{{ route('eliminarP', ['id' => $P->ID_Producto]) }}"><button
                                                     type="button" class="btn btn-danger">Eliminar</button>
                                                 <a href="{{ route('editarP', ['id' => $P->ID_Producto]) }}"><button
                                                         type="button" class="btn btn-success">Editar</button>
