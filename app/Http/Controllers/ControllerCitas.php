@@ -54,10 +54,9 @@ class ControllerCitas extends Controller
 
     public function salvarCi(Citas $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
-        //dd($request->all());
+        dd($request->all());
         $query = Citas::find($id->ID_Citas);
-        $query->Fecha = $request->Fecha;
+        $query->Fecha = trim($request->Fecha);
         $query->Hora = trim($request->Hora);
         $query->Comentario = trim($request->Comentario);
         $query->ID_Usuario = $request->ID_Usuario;

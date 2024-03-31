@@ -53,7 +53,6 @@ class ControllerCarrito extends Controller
 
     public function salvarCa(Carrito $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Carrito::find($id->ID_Carrito);
         $query->Estado = $request->Estado;

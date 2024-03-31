@@ -44,7 +44,6 @@ class ControllerTipo_Citas extends Controller
 
     public function salvarTC(Tipo_Citas $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Tipo_Citas::find($id->ID_TipoCitas);
         $query->Descripcion = $request->Descripcion;

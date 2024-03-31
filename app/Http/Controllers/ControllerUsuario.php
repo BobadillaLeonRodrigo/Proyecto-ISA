@@ -57,7 +57,6 @@ class ControllerUsuario extends Controller
 
     public function salvar(Usuarios $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Usuarios::find($id->ID_Usuario);
         $query->Nombre_Usuario = $request->Nombre_Usuario;

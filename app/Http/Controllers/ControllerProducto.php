@@ -58,7 +58,6 @@ class ControllerProducto extends Controller
 
     public function salvarP(Producto $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Producto::find($id->ID_Producto);
 

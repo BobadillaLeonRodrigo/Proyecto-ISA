@@ -45,7 +45,6 @@ class ControllerTipo_Roles extends Controller
 
     public function salvarTR(Tipo_Roles $id, Request $request)
     {
-        //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Tipo_Roles::find($id->ID_Role);
         $query->Nombre_Role = $request->Nombre_Role;
