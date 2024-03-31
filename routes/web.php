@@ -93,26 +93,26 @@ Route::name('salvarP')->put('salvarP/{id}', [ControllerProducto::class, 'salvarP
 Route::name('citas')->get('citas', [ControllerCitas::class, 'citas']);
 //Rutas de CRUD Citas
 //Agregar Citas
-//Route::name('agregar')->post('agregar', [ControllerCitas::class, 'agregar']);
+Route::name('agregarCi')->post('agregarCi', [ControllerCitas::class, 'agregarCi']);
 //Eliminar Citas
-//Route::name('eliminar')->delete('eliminar/{id}', [ControllerCitas::class, 'eliminar']);
-//Route::name('eliminar')->get('eliminar/{id}', [ControllerCitas::class, 'eliminar']);
+Route::name('eliminarCi')->delete('eliminarCi/{id}', [ControllerCitas::class, 'eliminarCi']);
+Route::name('eliminarCi')->get('eliminarCi/{id}', [ControllerCitas::class, 'eliminarCi']);
 //Guardar Citas
-//Route::name('editarCi')->get('editarCi/{id}',[ControllerCitas::class, 'editarCi']);
-//Route::name('salvarCa')->put('salvarCa/{id}',[ControllerCitas::class, 'salvarCa']);
+Route::name('editarCi')->get('editarCi/{id}',[ControllerCitas::class, 'editarCi']);
+Route::name('salvarCi')->put('salvarCi/{id}',[ControllerCitas::class, 'salvarCi']);
 
 //------------------------------------------------------------------------------------------------
 //Rutas de Carrito
 Route::name('carrito')->get('carrito', [ControllerCarrito::class, 'carrito']);
 //Rutas de CRUD Carrito
 //Agregar Carrito
-//Route::name('agregar')->post('agregar', [ControllerCarrito::class, 'agregar']);
+Route::name('agregarCa')->post('agregarCa', [ControllerCarrito::class, 'agregarCa']);
 //Eliminar Carrito
-//Route::name('eliminar')->delete('eliminar/{id}', [ControllerCarrito::class, 'eliminar']);
-//Route::name('eliminar')->get('eliminar/{id}', [ControllerCarrito::class, 'eliminar']);
+Route::name('eliminarCa')->delete('eliminarCa/{id}', [ControllerCarrito::class, 'eliminarCa']);
+Route::name('eliminarCa')->get('eliminarCa/{id}', [ControllerCarrito::class, 'eliminarCa']);
 //Guardar Carrito
-//Route::name('editarCa')->get('editarCa/{id}',[ControllerCarrito::class, 'editarCa']);
-//Route::name('salvarCa')->put('salvarCa/{id}',[ControllerCarrito::class, 'salvarCa']);
+Route::name('editarCa')->get('editarCa/{id}',[ControllerCarrito::class, 'editarCa']);
+Route::name('salvarCa')->put('salvarCa/{id}',[ControllerCarrito::class, 'salvarCa']);
 
 //------------------------------------------------------------------------------------------------
 //Rutas de Login
