@@ -134,76 +134,41 @@
                 <div class="container">
                     <div class="py-2 text-warning">
                         <form class="row g-2 border border-warning border-3 rounded-top"
-                            action="{{ route('agregarCi') }}" method="post" enctype="multipart/form-data">
+                            action="{{ route('salvarCi', ['id' => $citas->ID_Cita]) }}" method="post"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="col-sm-4 text-center">
                                 <label for="inputEmail4" class="form-label">Fecha de Cita</label>
-                                <input type="date" class="form-control" name="Fecha">
+                                <input value="{{ $citas->Fecha }}" type="date" class="form-control" name="Fecha">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputPassword4" class="form-label">Hora de Cita</label>
-                                <input type="time" class="form-control" id="inputPassword4" name="Hora">
+                                <input value="{{ $citas->Hora }}" type="time" class="form-control" id="inputPassword4" name="Hora">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputPassword4" class="form-label">Comentario</label>
-                                <input type="text" class="form-control" id="inputPassword4" name="Comentario">
+                                <input value="{{ $citas->Comentario }}" type="text" class="form-control" id="inputPassword4" name="Comentario">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputCity" class="form-label">Usuario</label>
-                                <select type="text" class="form-control" id="inputCity" name="ID_Usuario">
+                                <select value="{{ $citas->ID_Usuario }}" type="text" class="form-control" id="inputCity" name="ID_Usuario">
                                     <option value="1">Rodrigo</option>
                                     <option value="2">Abi</option>
                                 </select>
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputCity" class="form-label">Tipo de Cita</label>
-                                <select type="text" class="form-control" id="inputCity" name="ID_TipoCitas">
+                                <select value="{{ $citas->ID_TipoCitas }}" type="text" class="form-control" id="inputCity" name="ID_TipoCitas">
                                     <option value="1">Calzado Personalizado</option>
                                     <option value="2">Medicas del Pie</option>
                                 </select>
                             </div>
                             <div class="col-sm-12 py-2">
-                                <button type="submit" class="btn btn-success">Crear Citas</button>
+                                <button type="submit" class="btn btn-success">Editar Citas</button>
                             </div>
                         </form>
                     </div>
-                </div>
-                <h1 class="text-warning">Visualización de Citas</h1>
-                <div class="table-responsive py-3">
-                    <table class="table table-striped table-sm text-white">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Fecha</th>
-                                <th scope="col">Hora</th>
-                                <th scope="col">Comentario</th>
-                                <th scope="col">Usuario</th>
-                                <th scope="col">Tipo de Cita</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach ($Citas as $Ci)
-                                <tr class="text-white text-center">
-                                    <td>{{ $Ci->ID_Cita }}</td>
-                                    <td>{{ $Ci->Fecha }}</td>
-                                    <td>{{ $Ci->Hora }}</td>
-                                    <td>{{ $Ci->Comentario }}</td>
-                                    <td>{{ $Ci->Nombre_Usuario }}</td>
-                                    <td>{{ $Ci->Descripcion }}</td>
-                                    <td>
-                                        <div class="btn-group" role="group"
-                                            aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminarCi', ['id' => $Ci->ID_Cita]) }}"><button
-                                                    type="button" class="btn btn-danger">Eliminar</button>
-                                                <a href="{{ route('editarCi', ['id' => $Ci->ID_Cita]) }}"><button
-                                                        type="button" class="btn btn-success">Editar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </div>
