@@ -123,6 +123,8 @@ Route::name('login')->get('login', function () {
 Route::name('registro')->get('registro', function () {
     return view('usuarios/registro');
 });
+Route::get('registro_u',[ControllerUsuario::class,'registro_u'])->name('registro_u');
+Route::POST('registro_usuarios',[ControllerUsuario::class,'registro_usuarios'])->name('registro_usuarios');
 
 Route::name('valida')->post('valida', [Login::class, 'valida']);
 Route::name('logout')->get('logout', [Login::class, 'logout']);
