@@ -68,19 +68,30 @@ class ControllerUsuario extends Controller
         return redirect()->route("usuarios", ['id' => $id->ID_Usuario]);
     }
 
-    public function registro(Request $request)
-    {
-        //dd($request->all());
-        Usuarios::create(array(
-            'ID_Usuario' => $request->input('ID_Usuario'),
-            'Nombre_Usuario' => $request->input('Nombre_Usuario'),
-            'Apellido_Paterno' => $request->input('Apellido_Paterno'),
-            'Apellido_Materno' => $request->input('Apellido_Materno'),
-            'Email' => $request->input('Email'),
-            'Contraseña' => Hash::make($request->input('Contraseña')),
-            'ID_Role' => 2
-        ));
-        return redirect()->route("usuarios");
+
+
+    public function registro_usuarios(Request $request) {
+        $this->validate($request,[
+            //Agrega las alertas si los campos no se han añadido
+            'Nombre_Usuario'=>'required',
+            'Apellido_Paterno'=>'required',
+            'Apellido_Materno'=>'required',
+            'Email'=>'required | Email',
+            'Contraseña'=>'required'
+        ]);
+        //Crea nuevos usuarios en la tabla de Usuarios y su rol asignado
+        $usuarios = new Usuarios;
+            $usuarios -> Nombre_Usuario = $request->Nombre_Usuario;
+            $usuarios -> Apellido_Paterno = $request->Apellido_Paterno;
+            $usuarios -> Apellido_Materno = $request->Apellido_Materno;
+            $usuarios -> Email = $request->Email;
+            $usuarios -> Contraseña = Hash::make($request->Contraseña);
+            $usuarios -> ID_Role = '2';
+                $usuarios -> save();
+                    return redirect()->route('login');
+    }
+    public function registro_u(){
+        return view('sesiones.login');
     }
 
 }
