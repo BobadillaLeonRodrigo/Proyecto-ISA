@@ -15,7 +15,16 @@ class ControllerProducto extends Controller
     }
     public function agregarP(Request $request)
     {
-        dd($request->all());
+        if ($request->file('Imagen')  !=  '') {
+            $file = $request->file('Imagen');
+            $Imagen1 = $file->getClientOriginalName();
+            $dates = date('YmdHis');
+            $Imagen2 = $dates . $Imagen1;
+            \Storage::disk('local')->put($Imagen2, \File::get($file));
+        } else {
+            $Imagen2 = 'bota1.jpg';
+        }
+        //dd($request->all());
         Producto::create(array(
             'ID_Producto' => $request->input('ID_Producto'),
             'Nombre_Producto' => $request->input('Nombre_Producto'),
@@ -23,7 +32,7 @@ class ControllerProducto extends Controller
             'Precio' => $request->input('Precio'),
             'Talla' => $request->input('Talla'),
             'Color' => $request->input('Color'),
-            'Imagen' => $request->input('Imagen')
+            'Imagen' => $Imagen2
         ));
         return redirect()->route("producto");
     }
@@ -52,12 +61,24 @@ class ControllerProducto extends Controller
         //$id->update($request->only('clave','nombre','app','fn','gen','foto','email','pass','nivel','activo'))
         //dd($request->all());
         $query = Producto::find($id->ID_Producto);
+
+        if ($request->file('Imagen') != '') {
+            $file = $request->file('Imagen');
+
+            $Imagen1 = $file->getClientOriginalName();
+            $ldate = date('YmdHis');
+            $Imagen2 = $ldate . $Imagen1;
+
+            \Storage::disk('local')->put($Imagen2, \File::get($file));
+        } else {
+            $Imagen2 = $query->Imagen;
+        }
         $query->Nombre_Producto = $request->Nombre_Producto;
         $query->Descripcion = trim($request->Descripcion);
         $query->Precio = trim($request->Precio);
         $query->Talla = $request->Talla;
         $query->Color = $request->Color;
-        $query->Imagen = $request->Imagen;
+        $query->Imagen = $Imagen2;
         $query->save();
         return redirect()->route("producto", ['id' => $id->ID_Producto]);
     }

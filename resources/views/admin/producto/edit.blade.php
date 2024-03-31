@@ -100,7 +100,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('citas')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('citas') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -112,7 +112,7 @@
                                 <p class="card-text text-center">With supporting text below as a natural lead-in to
                                     additional content.</p>
                                 <div class="text-center">
-                                    <a href="{{route('carrito')}}" class="btn btn-primary">Visualizar</a>
+                                    <a href="{{ route('carrito') }}" class="btn btn-primary">Visualizar</a>
                                 </div>
                             </div>
                         </div>
@@ -133,80 +133,45 @@
                 <!-- Añadir formularios para la creación -->
                 <div class="container">
                     <div class="py-2 text-warning">
-                        <form class="row g-2 border border-warning border-3 rounded-top" action="{{ route('agregarP') }}"
-                            method="post" enctype="multipart/form-data">
+                        <form class="row g-2 border border-warning border-3 rounded-top"
+                            action="{{ route('salvarP', ['id' => $productos->ID_Producto]) }}" method="post"
+                            enctype="multipart/form-data">
                             {{ csrf_field() }}
+                            {{ method_field('PUT') }}
                             <div class="col-sm-4 text-center">
                                 <label for="inputEmail4" class="form-label">Nombre del Producto</label>
-                                <input type="text" class="form-control" name="Nombre_Producto">
+                                <input value="{{ $productos->Nombre_Producto }}" type="text" class="form-control"
+                                    name="Nombre_Producto">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputPassword4" class="form-label">Descripción</label>
-                                <input type="text" class="form-control" id="inputPassword4" name="Descripcion">
+                                <input value="{{ $productos->Descripcion }}" type="text" class="form-control"
+                                    id="inputPassword4" name="Descripcion">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputPassword4" class="form-label">Precio</label>
-                                <input type="number" class="form-control" id="inputPassword4" name="Precio">
+                                <input value="{{ $productos->Precio }}" type="number" class="form-control"
+                                    id="inputPassword4" name="Precio">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputAddress" class="form-label">Talla</label>
-                                <input type="text" class="form-control" id="inputAddress" name="Talla">
+                                <input value="{{ $productos->Talla }}" type="text" class="form-control"
+                                    id="inputAddress" name="Talla">
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="input" class="form-label">Imagen</label>
-                                <input type="file" class="form-control"
+                                <input value="{{ $productos->Imagen }}" type="file" class="form-control"
                                     id="input" name="Imagen">
-                                </select>
                             </div>
                             <div class="col-sm-4 text-center">
                                 <label for="inputAddress2" class="form-label">Color</label>
-                                <input type="text" class="form-control" id="inputAddress2" name="Color">
+                                <input value="{{$productos->Color}}" type="text" class="form-control" id="inputAddress2" name="Color">
                             </div>
                             <div class="col-sm-12 py-2">
-                                <button type="submit" class="btn btn-success">Crear Producto</button>
+                                <button type="submit" class="btn btn-success">Editar Producto</button>
                             </div>
                         </form>
                     </div>
-                </div>
-                <h1 class="text-warning">Visualización de Productos</h1>
-                <div class="table-responsive py-3">
-                    <table class="table table-striped table-sm text-white">
-                        <thead class="text-center">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Producto</th>
-                                <th scope="col">Descripcion</th>
-                                <th scope="col">Precio</th>
-                                <th scope="col">Talla</th>
-                                <th scope="col">Color</th>
-                                <th scope="col">Imagen</th>
-                                <th scope="col">Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        <tbody>
-                            @foreach ($Productos as $P)
-                                <tr class="text-white text-center">
-                                    <td>{{ $P->ID_Producto }}</td>
-                                    <td>{{ $P->Nombre_Producto }}</td>
-                                    <td>{{ $P->Descripcion }}</td>
-                                    <td>{{ $P->Precio }}</td>
-                                    <td>{{ $P->Talla }}</td>
-                                    <td>{{ $P->Color }}</td>
-                                    <td><img src="{{ asset ('img/'.$P->Imagen) }}" style="width:50px;"></td>
-                                    <td>
-                                        <div class="btn-group" role="group"
-                                            aria-label="Basic mixed styles example">
-                                            <a href="{{ route('eliminarP', ['id' => $P->ID_Producto]) }}"><button
-                                                    type="button" class="btn btn-danger">Eliminar</button>
-                                                <a href="{{ route('editarP', ['id' => $P->ID_Producto]) }}"><button
-                                                        type="button" class="btn btn-success">Editar</button>
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
                 </div>
             </main>
         </div>
