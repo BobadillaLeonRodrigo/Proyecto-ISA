@@ -38,10 +38,10 @@
                 <div class="carousel-caption d-none d-md-block">
                     <figure class="text-center">
                         <blockquote class="blockquote">
-                            <p>A well-known quote, contained in a blockquote element.</p>
+                            <p>¡Pisa con estilo, elige ISA para caminar con elegancia!</p>
                         </blockquote>
-                        <figcaption class="blockquote-footer">
-                            Someone famous in <cite title="Source Title">Source Title</cite>
+                        <figcaption class="blockquote-footer text-secondary">
+                            <cite title="Source Title">Zapatería ISA</cite>
                         </figcaption>
                     </figure>
                 </div>
@@ -52,10 +52,6 @@
             </div>
             <div class="carousel-item" data-bs-interval="3000">
                 <img src="{{ asset('img/Bota3.jpg') }}" class="d-block mx-auto img-fluid custom-img-size"
-                    alt="Calazado ISA">
-            </div>
-            <div class="carousel-item">
-                <img src="{{ asset('img/Bota4.jpg') }}" class="d-block mx-auto img-fluid custom-img-size"
                     alt="Calazado ISA">
             </div>
         </div>
@@ -75,9 +71,9 @@
             <div class="col-12">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     <!-- Card 1 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto1.jpg') }}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 1</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
@@ -115,11 +111,11 @@
                         </div>
                     </div>
                     <!-- Card 2 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto2.jpg') }}" class="card-img-top img-fluid" alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Producto 1</h5>
+                                <h5 class="card-title text-center">Producto 2</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
                                 <div class="row mb-3">
                                     <div class="col">
@@ -155,11 +151,12 @@
                         </div>
                     </div>
                     <!-- Card 3 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto3.jpg') }}" class="card-img-top img-fluid"
+                                alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Producto 1</h5>
+                                <h5 class="card-title text-center">Producto 3</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
                                 <div class="row mb-3">
                                     <div class="col">
@@ -195,11 +192,12 @@
                         </div>
                     </div>
                     <!-- Card 4 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto4.jpg') }}" class="card-img-top img-fluid"
+                                alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Producto 1</h5>
+                                <h5 class="card-title text-center">Producto 4</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
                                 <div class="row mb-3">
                                     <div class="col">
@@ -235,11 +233,12 @@
                         </div>
                     </div>
                     <!-- Card 5 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto5.jpg') }}" class="card-img-top img-fluid"
+                                alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Producto 1</h5>
+                                <h5 class="card-title text-center">Producto 5</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
                                 <div class="row mb-3">
                                     <div class="col">
@@ -275,11 +274,12 @@
                         </div>
                     </div>
                     <!-- Card 6 -->
-                    <div class="col">
+                    <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="..." class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto6.jpg') }}" class="card-img-top img-fluid"
+                                alt="...">
                             <div class="card-body">
-                                <h5 class="card-title text-center">Producto 1</h5>
+                                <h5 class="card-title text-center">Producto 6</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
                                 <div class="row mb-3">
                                     <div class="col">
