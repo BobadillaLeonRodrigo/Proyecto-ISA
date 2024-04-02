@@ -67,13 +67,14 @@
         </button>
     </div>
     <div class="container-fluid">
-        <div class="row py-2">
+        <div class="row py-4">
             <div class="col-12">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
                     <!-- Card 1 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto1.jpg') }}" class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto1.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
+                                alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 1</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
@@ -113,7 +114,8 @@
                     <!-- Card 2 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto2.jpg') }}" class="card-img-top img-fluid" alt="...">
+                            <img src="{{ asset('img/Producto2.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
+                                alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 2</h5>
                                 <p class="card-text">Descripción breve del producto.</p>
@@ -153,7 +155,7 @@
                     <!-- Card 3 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto3.jpg') }}" class="card-img-top img-fluid"
+                            <img src="{{ asset('img/Producto3.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 3</h5>
@@ -194,7 +196,7 @@
                     <!-- Card 4 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto4.jpg') }}" class="card-img-top img-fluid"
+                            <img src="{{ asset('img/Producto4.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 4</h5>
@@ -235,7 +237,7 @@
                     <!-- Card 5 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto5.jpg') }}" class="card-img-top img-fluid"
+                            <img src="{{ asset('img/Producto5.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 5</h5>
@@ -276,7 +278,7 @@
                     <!-- Card 6 -->
                     <div class="col-md-4 col-6">
                         <div class="card h-100">
-                            <img src="{{ asset('img/Producto6.jpg') }}" class="card-img-top img-fluid"
+                            <img src="{{ asset('img/Producto6.jpg') }}" class="card-img-top h-50 w-100 img-fluid"
                                 alt="...">
                             <div class="card-body">
                                 <h5 class="card-title text-center">Producto 6</h5>
