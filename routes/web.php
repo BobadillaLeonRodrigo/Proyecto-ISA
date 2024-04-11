@@ -34,7 +34,7 @@ Route::name('politicas')->get('/politicas', function () {
 
 Route::get('dashboard', function () {
     return view('admin/dashboard');
-});
+})->name('dashboard');
 
 //Rutas para la navegacion del panel administrativo
 //Rutas de Usuarios
@@ -128,3 +128,4 @@ Route::POST('registro_usuarios',[ControllerUsuario::class,'registro_usuarios'])-
 
 Route::name('valida')->post('valida', [Login::class, 'valida']);
 Route::name('logout')->get('logout', [Login::class, 'logout']);
+Route::name('agregarCiInicio')->post('agregarCiInicio', [ControllerCitas::class, 'agregarCiInicio']);

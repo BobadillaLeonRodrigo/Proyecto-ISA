@@ -64,4 +64,18 @@ class ControllerCitas extends Controller
         $query->save();
         return redirect()->route("citas", ['id' => $id->ID_Citas]);
     }
+
+    public function agregarCiInicio(Request $request)
+    {
+        //dd($request->all());
+        Citas::create(array(
+            'ID_Citas' => $request->input('ID_Citas'),
+            'Fecha' => $request->input('Fecha'),
+            'Hora' => $request->input('Hora'),
+            'Comentario' => $request->input('Comentario'),
+            'ID_Usuario' => $request->input('ID_Usuario'),
+            'ID_TipoCitas' => $request->input('ID_TipoCitas')
+        ));
+        return redirect()->route("inicio");
+    }
 }
