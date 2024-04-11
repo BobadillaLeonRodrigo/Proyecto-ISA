@@ -328,34 +328,40 @@
                         </div>
                         <div class="col-md-6">
                             <!-- Se cambia el tamaño de la columna a col-md-6 para que ocupe la mitad del ancho en pantallas medianas y grandes -->
-                            <form>
+                            <form action="{{ route('agregarCiInicio') }}" method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
                                 <h2 class="text-center mb-4">Genera Una Cita</h2>
                                 <div class="mb-3">
                                     <label for="fecha" class="form-label">Fecha de la Cita</label>
-                                    <input type="date" class="form-control" id="fecha" required>
+                                    <input type="date" class="form-control" id="fecha" name="Fecha"
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="hora" class="form-label">Hora de la Cita</label>
-                                    <input type="time" class="form-control" id="hora" required>
+                                    <input type="time" class="form-control" id="hora" name="Hora"
+                                        required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="comentario" class="form-label">Comentario del Cliente</label>
-                                    <textarea class="form-control" id="comentario" rows="3" required></textarea>
+                                    <textarea class="form-control" id="comentario" rows="3" name="Comentario" required></textarea>
                                 </div>
                                 <div class="mb-3">
                                     <label for="tipo-cita" class="form-label">Tipo de Cita</label>
-                                    <select class="form-select" id="tipo-cita" required>
+                                    <select class="form-select" id="tipo-cita" name="ID_TipoCitas" required>
                                         <option value="" disabled selected>Selecciona el tipo de cita</option>
-                                        <option value="Reparación">Reparación</option>
-                                        <option value="Venta">Venta</option>
-                                        <option value="Otro">Otro</option>
+                                        <option value="1">Calzado Personalizado</option>
+                                        <option value="2">Medicas del Pie</option>
                                     </select>
                                 </div>
+                                <!-- Agrega el input oculto -->
+                                <input type="hidden" id="ID_Usuario" name="ID_Usuario" value="2">
+                                <!-- Fin del input oculto -->
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-primary btn-lg long-btn">Solicitar
-                                        Cita</button>
+                                    <button type="submit" class="btn btn-primary btn-lg long-btn">
+                                        Solicitar Cita</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
